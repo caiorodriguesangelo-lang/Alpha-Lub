@@ -1,0 +1,7 @@
+{
+  "name": "Alpha Lub Center - Especialistas em Lubrificação",
+  "description": "Site profissional para o Alpha Lub Center em Barueri, SP. Oferecendo serviços de troca de óleo, filtros e fluidos com excelência e tecnologia.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
