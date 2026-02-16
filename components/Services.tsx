@@ -1,12 +1,12 @@
 
 import React from 'react';
-import { SERVICES } from '../constants';
+import { SERVICES, BUSINESS_INFO } from '../constants';
 import { Icon } from './Icon';
 import { ScrollReveal } from './ScrollReveal';
 
 export const Services: React.FC = () => {
   return (
-    <section id="servicos" className="py-24 bg-zinc-950">
+    <section id="servicos" className="py-24 bg-zinc-950 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="mb-16 text-center">
           <h2 className="text-red-600 font-bold tracking-widest mb-2">CHECK-UP COMPLETO</h2>
@@ -18,7 +18,7 @@ export const Services: React.FC = () => {
           {SERVICES.map((service, index) => (
             <ScrollReveal key={service.id} delay={index * 100}>
               <div 
-                className="group relative bg-zinc-900/50 border border-zinc-800 p-8 rounded-xl hover:bg-zinc-900 transition-all duration-300 overflow-hidden h-full"
+                className="group relative bg-zinc-900/50 border border-zinc-800 p-8 rounded-xl hover:bg-zinc-900 transition-all duration-300 overflow-hidden h-full flex flex-col"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                   <Icon name={service.iconName as any} size={80} />
@@ -29,11 +29,16 @@ export const Services: React.FC = () => {
                 </div>
                 
                 <h4 className="text-xl font-bold mb-4 brand-font tracking-wide">{service.title}</h4>
-                <p className="text-zinc-500 mb-6 leading-relaxed">
+                <p className="text-zinc-500 mb-6 leading-relaxed flex-grow">
                   {service.description}
                 </p>
                 
-                <a href="#" className="flex items-center gap-2 text-red-600 text-sm font-bold hover:gap-4 transition-all">
+                <a 
+                  href={`${BUSINESS_INFO.whatsapp}&text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o serviço de ${service.title}.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-red-600 text-sm font-bold hover:gap-4 transition-all mt-auto"
+                >
                   SAIBA MAIS <Icon name="ArrowRight" size={16} />
                 </a>
               </div>
@@ -48,9 +53,10 @@ export const Services: React.FC = () => {
               <p className="text-red-100">Fale com nossa equipe técnica agora mesmo pelo WhatsApp.</p>
             </div>
             <a 
-              href="https://wa.me/5511920432018"
+              href={BUSINESS_INFO.whatsapp}
               target="_blank"
-              className="px-8 py-4 bg-black text-white rounded font-bold hover:bg-zinc-900 transition-all flex items-center gap-2"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-black text-white rounded font-bold hover:bg-zinc-900 transition-all flex items-center gap-2 shadow-xl"
             >
               <Icon name="MessageSquare" />
               CONVERSAR AGORA

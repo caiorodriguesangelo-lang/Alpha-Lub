@@ -52,7 +52,9 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
             <div>
-              <Logo height={60} className="mb-6" />
+              <a href="#inicio" className="hover:opacity-80 transition-opacity inline-block">
+                <Logo height={60} className="mb-6" />
+              </a>
               <p className="max-w-sm text-zinc-500 text-sm leading-relaxed font-medium">
                 Sua referência em Barueri para serviços de lubrificação e troca de filtros com tecnologia de ponta e atendimento personalizado.
               </p>
@@ -69,13 +71,25 @@ const App: React.FC = () => {
               </div>
 
               <div className="space-y-4">
-                <h5 className="text-white font-bold text-xs tracking-[0.3em] uppercase">Redes Sociais</h5>
+                <h5 className="text-white font-bold text-xs tracking-[0.3em] uppercase">Contato Rápido</h5>
                 <div className="flex gap-4">
-                  <a href={BUSINESS_INFO.whatsapp} target="_blank" className="w-12 h-12 rounded bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-red-600 transition-all">
+                  <a 
+                    href={BUSINESS_INFO.whatsapp} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Chamar no WhatsApp"
+                    className="w-12 h-12 rounded bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-red-600 transition-all"
+                  >
                       <Icon name="MessageSquare" size={20} />
                   </a>
-                  <a href="#" className="w-12 h-12 rounded bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-red-600 transition-all">
-                      <Icon name="Activity" size={20} />
+                  <a 
+                    href={BUSINESS_INFO.addressLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    title="Ver Localização no Maps"
+                    className="w-12 h-12 rounded bg-zinc-900 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-red-600 transition-all"
+                  >
+                      <Icon name="MapPin" size={20} />
                   </a>
                 </div>
               </div>
@@ -97,6 +111,7 @@ const App: React.FC = () => {
       <a 
         href={BUSINESS_INFO.whatsapp}
         target="_blank"
+        rel="noopener noreferrer"
         className="fixed bottom-6 left-6 z-[60] bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 active:scale-95 transition-all md:hidden border-4 border-white/20"
       >
         <Icon name="MessageSquare" />
